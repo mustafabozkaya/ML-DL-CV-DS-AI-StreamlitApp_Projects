@@ -41,8 +41,8 @@ else:
 data = data.rename(columns = {"diagnosis":"Dependent"})
 data_=data.copy()
 sns.countplot(y=data_["Dependent"],
-                   linewidth=5,
-                   edgecolor=sns.color_palette("dark", 3))
+                   linewidth=1,
+                   edgecolor=sns.color_palette("colorblind", 2))
 print(data.Dependent.value_counts())
 
 if not data.Dependent.dtype in [np.float64,np.int64]:
