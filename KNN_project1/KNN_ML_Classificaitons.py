@@ -40,9 +40,9 @@ else:
 
 data = data.rename(columns = {"diagnosis":"Dependent"})
 data_=data.copy()
-sns.countplot(y=data_["Dependent"],
-                   linewidth=5,
-                   edgecolor=sns.color_palette("dark", 3))
+sns.countplot(y=data["Dependent"],
+                   linewidth=1,
+                   edgecolor=sns.color_palette("colorblind", 2))
 print(data.Dependent.value_counts())
 
 if not data.Dependent.dtype in [np.float64,np.int64]:
@@ -63,3 +63,78 @@ data.info()
 describe = data.describe()
 
 columns_features=data.columns.to_numpy()
+
+#%% exploratory data analysis
+y_depent="Dependent"
+x_indepent=columns_features[1:]
+# fully Feature Correlation
+corr_matrix = data.corr()
+#print(corr_matrix)
+
+#dependent variable correlations with independent other features
+sns.heatmap(corr_matrix[[y_depent]].sort_values(by=y_depent),annot = True, fmt = ".2f",xticklabels=True, yticklabels=True)
+plt.title("Correlation Between Features")
+plt.show()
+
+
+# for dependent subsample correlations
+thresh = 0.60 # for target variable
+filtre = np.abs(corr_matrix[y_depent]) < thresh
+corr_features=np.append(corr_matrix.columns[filtre].to_numpy(),[y_depent])
+thres_corr_m=data[corr_features].corr()
+sns.clustermap(thres_corr_m, annot = True, fmt = ".2f")
+plt.title(f"Correlation Between Features threshold= {thresh}")
+plt.show()
+
+#there some correlated features.We drop out these features because of we improve models
+filtres_corr=(np.abs(thres_corr_m)== 1) | (np.abs(thres_corr_m)< 0.5)
+maske = thres_corr_m[filtres_corr] # for filter 
+sns.heatmap(maske, cmap="Reds",annot = True, fmt = ".2g",xticklabels=True, yticklabels=True)
+plt.show()
+
+masked=np.tril(maske)
+sns.heatmap(maske,mask=masked ,annot = True, fmt = ".2g",xticklabels=True, yticklabels=True)
+plt.title("Correlation Between Features")
+
+
+
+
+
+
+for i,ser in enumerate(filtres_corr):
+    ser.reset_index(drop=True,inplace=True)
+    corr_matrix[corr_features].corr()[]
+
+corr_matrix_filer=[corr_matrix<.75]
+
+corr_pairs=corr_matrix.unstack()
+
+sorted_pairs = corr_pairs.sort_values(kind="quicksort")
+
+strong_pairs = sorted_pairs[(abs(sorted_pairs) <0.60)]
+
+threscorr_pairs=strong_pairs.sort_index(level=0).unstack()
+
+threscorr_pairs.isnull().any()
+threscorr_pairs.isnull().sum().sort_values()
+
+
+
+
+
+for i,ser in enumerate(filtres_corr):
+    ser.reset_index(drop=True,inplace=True)
+    corr_matrix[corr_features].corr()[]
+
+corr_matrix_filer=[corr_matrix<.75]
+
+corr_pairs=corr_matrix.unstack()
+
+sorted_pairs = corr_pairs.sort_values(kind="quicksort")
+
+strong_pairs = sorted_pairs[(abs(sorted_pairs) <0.60)]
+
+threscorr_pairs=strong_pairs.sort_index(level=0).unstack()
+
+threscorr_pairs.isnull().any()
+threscorr_pairs.isnull().sum().sort_values()
