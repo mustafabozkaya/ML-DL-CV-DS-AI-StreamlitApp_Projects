@@ -138,3 +138,9 @@ threscorr_pairs=strong_pairs.sort_index(level=0).unstack()
 
 threscorr_pairs.isnull().any()
 threscorr_pairs.isnull().sum().sort_values()
+
+
+#%% tools for EDA for Datasets
+
+from dataprep.eda import create_report
+create_report(data)
