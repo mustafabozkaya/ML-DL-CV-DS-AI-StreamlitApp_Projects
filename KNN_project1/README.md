@@ -1,13 +1,11 @@
-# **Streamlt Aplications with Machine Learning & Deep learnings Projects  )**
-I am plannig to develop  machine learning and Deep learnings algorthm projects  that works based variety contunious,categorical  data.Each  project is about of clustering and regresion, estimation,classificaiton. I will use The most known algorithm for  projects is that there is a lot of data and works with different accuracy metrics. finally I will develop an application that will allow you to test every project using streamlit api.  The software automatically brings you the predicitons from the background data with the selection of columns and rows.
-
- See you new projects!
 
 
+## Breast Canser ML Classification
 
-## Data Story 
 
---------------------------------------------
+### Data Story
+
+---
 
 **Breast cancer wisconsin (diagnostic) Data Set Characteristics:**
 
@@ -27,12 +25,12 @@ I am plannig to develop  machine learning and Deep learnings algorthm projects  
         - symmetry
         - fractal dimension ("coastline approximation" - 1)
 
-        The mean, standard error, and "worst" or largest (mean of the three
+    The mean, standard error, and "worst" or largest (mean of the three
         worst/largest values) of these features were computed for each image,
         resulting in 30 features.  For instance, field 0 is Mean Radius, field
         10 is Radius SE, field 20 is Worst Radius.
 
-        - class:
+    - class:
                 - WDBC-Malignant(0)
                 - WDBC-Benign(1)
 
@@ -77,21 +75,17 @@ I am plannig to develop  machine learning and Deep learnings algorthm projects  
 
     :Class Distribution: 212 - Malignant(0), 357 - Benign(1)
 
-
-
 ### Data Source 1: https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+%28Diagnostic%29
 
 ### Data Source 2 : https://www.kaggle.com/uciml/breast-cancer-wisconsin-data
-
 
 ### **The coding language use:**
 
 'Python 3.8.5'
 
-!["python"](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=Python&logoColor=darkgreen)
+![](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=Python&logoColor=darkgreen)
 
 ### **Libraries Used:**
-
 
 ![](https://img.shields.io/badge/scikit_learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
 
@@ -111,23 +105,18 @@ I am plannig to develop  machine learning and Deep learnings algorthm projects  
 
 ### **Information links:**
 
-
 ## Contact (Email) :
+
  [![Mail Badge](https://img.shields.io/badge/info.mustafabozkaya@gmail.com-c14438?style=for-the-badge&logo=Gmail&logoColor=white&link=mailto:info.mustafabozkaya@gmail.com)](mailto:info.mustafabozkaya@gmail.com)
 
 ## Official Web site :
 
 [![website](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://mustafabozkaya.github.io/)
 
-
 ## Kaggle:
 
 [![kaggle](https://img.shields.io/badge/Kaggle-20BEFF?style=for-the-badge&logo=Kaggle&logoColor=white)](https://www.kaggle.com/mustafabozka)
 
-
 ## Linkedin :
 
 [![linkedin](https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mustafa-bozkaya/)
-
-
-
